@@ -53,7 +53,7 @@ public class DoublyLinkedList<E>{
     }
     public void print(){
         
-     Node<E> c = header.getNext();
+     Node<E> c = header;
      while (c != null) {
       System.out.print(c.getElement() + " ");
       c = c.getNext();
