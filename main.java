@@ -1,15 +1,15 @@
 //Student Name: Sarah Mohammed Althobiti  Student ID: 444004881
 import java.util.Scanner;
-public class main {
+public class main{
     public static void main(String[] args){
         DoublyLinkedList<Integer> myList = new DoublyLinkedList<>();
         Scanner scnr = new Scanner(System.in);
         boolean flag = true;
         while(flag){
-            System.out.println("1.Add new node to CLL");
-            System.out.println("2.Delete a node from CLL");
-            System.out.println("3.Show how many nodes in CLL");
-            System.out.println("4.Print all data in the Cll");
+            System.out.println("1.Add new node to DLL");
+            System.out.println("2.Delete a node from DLL");
+            System.out.println("3.Show how many nodes in DLL");
+            System.out.println("4.Print all data in the Dll");
             System.out.println("5.Exit");
             int num = scnr.nextInt();
             int key;
@@ -46,8 +46,20 @@ public class main {
             }
 
         }
-        System.out.println("the first element is: "+myList.first());
-        System.out.println("the last element is: "+myList.last());     
-   }
-      
+       // System.out.println("the first element is: "+myList.first());
+       // System.out.println("the last element is: "+myList.last());  
+       /////////////////////////////////////////////////////////////////
+       myList.addFirst(10);
+       myList.addLast(20);
+       myList.addLast(30);
+       myList.addLast(20);
+       //myList.addLast(10);
+       System.out.println(myList.isPalidrome());
+       myList.print();
+       myList.printReverse();
+
+
+
+        
+    }
 }

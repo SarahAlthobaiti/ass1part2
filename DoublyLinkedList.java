@@ -53,8 +53,8 @@ public class DoublyLinkedList<E>{
     }
     public void print(){
         
-     Node<E> c = header;
-     while (c != null) {
+     Node<E> c = header.getNext();
+     while (c != trailer) {
       System.out.print(c.getElement() + " ");
       c = c.getNext();
      }
@@ -92,6 +92,41 @@ public class DoublyLinkedList<E>{
         successor.setPrev(predecessor);
         size--;
         return node.getElement();
+    }
+    public boolean isPalidrome(){
+        if(isEmpty()){
+            return false;
+        }
+        if(size % 2 == 0){
+            System.out.println("not palidrom");
+            return false;
+        }
+        else{
+            Node c1 = header.getNext();
+            Node c2 = trailer.getPrev();
+            while(c1 != c2){
+                if(c1.getElement()!= c2.getElement()){
+                    return false;
+                }else{
+                    c1 = c1.getNext();
+                    c2 = c2.getPrev();
+                }
+            }
+            return true;
+        }
+    
+    }
+    public void printReverse(){
+      if(isEmpty()){
+        System.out.println("the list is empty");
+      }else{
+        Node<E> c = trailer.getPrev();
+        while(c != header){
+            System.out.print(c.getElement()+" ");
+            c = c.getPrev();
+        }
+        System.out.println();
+      }
     }
 
 }
